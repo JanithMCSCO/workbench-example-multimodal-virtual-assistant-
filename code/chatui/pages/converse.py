@@ -115,7 +115,8 @@ def build_page(client: chat_client.ChatClient) -> gr.Blocks:
     
     model_list = ["meta/llama3-70b-instruct",
                   "meta/llama-3.1-405b-instruct",
-                  "mistralai/mixtral-8x22b-instruct-v0.1"]
+                  "mistralai/mixtral-8x22b-instruct-v0.1",
+                  "nvidia/vila"]
 
     with gr.Blocks(title=TITLE, theme=kui_theme, css=kui_styles + _LOCAL_CSS) as page:
         gr.Markdown(f"# {TITLE}")
@@ -813,6 +814,8 @@ def build_page(client: chat_client.ChatClient) -> gr.Blocks:
                     return gr.update(value=prompts_llama3.router_prompt)
                 case "mistralai/mixtral-8x22b-instruct-v0.1":
                     return gr.update(value=prompts_mistral.router_prompt)
+                case "nvidia/vila":
+                    return gr.update(value=prompts_llama3.router_prompt)
                 case _:
                     return gr.update(value=prompts_llama3.router_prompt)
         
@@ -824,6 +827,8 @@ def build_page(client: chat_client.ChatClient) -> gr.Blocks:
                     return gr.update(value=prompts_llama3.retrieval_prompt)
                 case "mistralai/mixtral-8x22b-instruct-v0.1":
                     return gr.update(value=prompts_mistral.retrieval_prompt)
+                case "nvidia/vila":
+                    return gr.update(value=prompts_llama3.retrieval_prompt)
                 case _:
                     return gr.update(value=prompts_llama3.retrieval_prompt)
 
@@ -835,6 +840,8 @@ def build_page(client: chat_client.ChatClient) -> gr.Blocks:
                     return gr.update(value=prompts_llama3.generator_prompt)
                 case "mistralai/mixtral-8x22b-instruct-v0.1":
                     return gr.update(value=prompts_mistral.generator_prompt)
+                case "nvidia/vila":
+                    return gr.update(value=prompts_llama3.generator_prompt)
                 case _:
                     return gr.update(value=prompts_llama3.generator_prompt)
             
@@ -846,6 +853,8 @@ def build_page(client: chat_client.ChatClient) -> gr.Blocks:
                     return gr.update(value=prompts_llama3.hallucination_prompt)
                 case "mistralai/mixtral-8x22b-instruct-v0.1":
                     return gr.update(value=prompts_mistral.hallucination_prompt)
+                case "nvidia/vila":
+                    return gr.update(value=prompts_llama3.hallucination_prompt)
                 case _:
                     return gr.update(value=prompts_llama3.hallucination_prompt)
             
@@ -857,6 +866,8 @@ def build_page(client: chat_client.ChatClient) -> gr.Blocks:
                     return gr.update(value=prompts_llama3.answer_prompt)
                 case "mistralai/mixtral-8x22b-instruct-v0.1":
                     return gr.update(value=prompts_mistral.answer_prompt)
+                case "nvidia/vila":
+                    return gr.update(value=prompts_llama3.answer_prompt)
                 case _:
                     return gr.update(value=prompts_llama3.answer_prompt)
             
