@@ -540,55 +540,55 @@ def build_page(client: chat_client.ChatClient) -> gr.Blocks:
         """ These helper functions set state and prompts when either the NIM or API Endpoint tabs are selected. """
         
         def _toggle_router_endpoints(api_model: str, nim_model: str, evt: gr.EventData):
-            if (evt._data['value'] == "NIM Endpoints") and ("llama3" in nim_model or len(nim_model) == 0):
+            if (evt._data['value'] == "NIM Endpoints") and ("llama3" in nim_model or "vila" in nim_model or len(nim_model) == 0):
                 value = prompts_llama3.router_prompt
             elif (evt._data['value'] == "NIM Endpoints") and ("mistral" in nim_model or "mixtral" in nim_model):
                 value = prompts_mistral.router_prompt
-            elif (evt._data['value'] == "API Endpoints") and ("llama3" in api_model):
+            elif (evt._data['value'] == "API Endpoints") and ("llama3" in api_model or "vila" in api_model):
                 value = prompts_llama3.router_prompt
             elif (evt._data['value'] == "API Endpoints") and ("mistral" in api_model or "mixtral" in api_model):
                 value = prompts_mistral.router_prompt
             return True if evt._data['value'] == "NIM Endpoints" else False, gr.update(value=value) if value is not None else gr.update(visible=True)
 
         def _toggle_retrieval_endpoints(api_model: str, nim_model: str, evt: gr.EventData):
-            if (evt._data['value'] == "NIM Endpoints") and ("llama3" in nim_model or len(nim_model) == 0):
+            if (evt._data['value'] == "NIM Endpoints") and ("llama3" in nim_model or "vila" in nim_model or len(nim_model) == 0):
                 value = prompts_llama3.retrieval_prompt
             elif (evt._data['value'] == "NIM Endpoints") and ("mistral" in nim_model or "mixtral" in nim_model):
                 value = prompts_mistral.retrieval_prompt
-            elif (evt._data['value'] == "API Endpoints") and ("llama3" in api_model):
+            elif (evt._data['value'] == "API Endpoints") and ("llama3" in api_model or "vila" in api_model):
                 value = prompts_llama3.retrieval_prompt
             elif (evt._data['value'] == "API Endpoints") and ("mistral" in api_model or "mixtral" in api_model):
                 value = prompts_mistral.retrieval_prompt
             return True if evt._data['value'] == "NIM Endpoints" else False, gr.update(value=value) if value is not None else gr.update(visible=True)
 
         def _toggle_generator_endpoints(api_model: str, nim_model: str, evt: gr.EventData):
-            if (evt._data['value'] == "NIM Endpoints") and ("llama3" in nim_model or len(nim_model) == 0):
+            if (evt._data['value'] == "NIM Endpoints") and ("llama3" in nim_model or "vila" in nim_model or len(nim_model) == 0):
                 value = prompts_llama3.generator_prompt
             elif (evt._data['value'] == "NIM Endpoints") and ("mistral" in nim_model or "mixtral" in nim_model):
                 value = prompts_mistral.generator_prompt
-            elif (evt._data['value'] == "API Endpoints") and ("llama3" in api_model):
+            elif (evt._data['value'] == "API Endpoints") and ("llama3" in api_model or "vila" in api_model):
                 value = prompts_llama3.generator_prompt
             elif (evt._data['value'] == "API Endpoints") and ("mistral" in api_model or "mixtral" in api_model):
                 value = prompts_mistral.generator_prompt
             return True if evt._data['value'] == "NIM Endpoints" else False, gr.update(value=value) if value is not None else gr.update(visible=True)
 
         def _toggle_hallucination_endpoints(api_model: str, nim_model: str, evt: gr.EventData):
-            if (evt._data['value'] == "NIM Endpoints") and ("llama3" in nim_model or len(nim_model) == 0):
+            if (evt._data['value'] == "NIM Endpoints") and ("llama3" in nim_model or "vila" in nim_model or len(nim_model) == 0):
                 value = prompts_llama3.hallucination_prompt
             elif (evt._data['value'] == "NIM Endpoints") and ("mistral" in nim_model or "mixtral" in nim_model):
                 value = prompts_mistral.hallucination_prompt
-            elif (evt._data['value'] == "API Endpoints") and ("llama3" in api_model):
+            elif (evt._data['value'] == "API Endpoints") and ("llama3" in api_model or "vila" in api_model):
                 value = prompts_llama3.hallucination_prompt
             elif (evt._data['value'] == "API Endpoints") and ("mistral" in api_model or "mixtral" in api_model):
                 value = prompts_mistral.hallucination_prompt
             return True if evt._data['value'] == "NIM Endpoints" else False, gr.update(value=value) if value is not None else gr.update(visible=True)
 
         def _toggle_answer_endpoints(api_model: str, nim_model: str, evt: gr.EventData):
-            if (evt._data['value'] == "NIM Endpoints") and ("llama3" in nim_model or len(nim_model) == 0):
+            if (evt._data['value'] == "NIM Endpoints") and ("llama3" in nim_model or "vila" in nim_model or len(nim_model) == 0):
                 value = prompts_llama3.answer_prompt
             elif (evt._data['value'] == "NIM Endpoints") and ("mistral" in nim_model or "mixtral" in nim_model):
                 value = prompts_mistral.answer_prompt
-            elif (evt._data['value'] == "API Endpoints") and ("llama3" in api_model):
+            elif (evt._data['value'] == "API Endpoints") and ("llama3" in api_model or "vila" in api_model):
                 value = prompts_llama3.answer_prompt
             elif (evt._data['value'] == "API Endpoints") and ("mistral" in api_model or "mixtral" in api_model):
                 value = prompts_mistral.answer_prompt
